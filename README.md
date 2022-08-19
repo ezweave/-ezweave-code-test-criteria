@@ -113,7 +113,7 @@ It returns an empty array (a personal project of the author for which he does no
 
 If you want to look at some of the more debatable items, jump to ["The Ugly"](#the-ugly). Your author just wanted to make a pop-culture reference, hence the order of these sections.
 
-The biggest problem, in your author's opinion, is that it has a pretty bad bug. If Bort, who was applying for a Senior role, I would have expected this to be handled appropriately.
+The biggest problem, in your author's opinion, is that it has a pretty bad bug. Bort, who was applying for a Senior role, should probably have written some error handling!
 
 The following `curl` request would kill the Node process running Express:
 
@@ -133,6 +133,8 @@ curl: (7) Failed to connect to localhost port 3000 after 6 ms: Connection refuse
 
 Again, if this is a _Senior_ (as Bort was), this is pretty ~~bad~~ ugly. Probably one of the first things one would test.
 
+Furthermore, there is not a single `catch` or `reject` in any of the code. That ain't "very senior", Bort!
+
 [Back](#table-of-contents)
 
 ## The Ugly
@@ -145,14 +147,20 @@ This is stuff that the author would posit is just _generally_ undesireable in a 
 
 - **No unit tests.** While Bort has good test coverage, his tests are all _integration_ tests. Had Bort actually written unit tests, Bort may have avoided ["The Bad"](#the-bad). The AC also explicitly stated:
   > Implements a testing strategy (unit tests, integration tests, something else?).
-- **Trivial tests.** Some of the tests that do exist a pretty trivial, added only for coverage. This is sort of a side-effect of basing the project on Express, so this is kind of a "meh". The author argues it would have been nice to avoid things like testing the [routing](./bort-sampson/__tests__/router.specs.js), etc.
+- **Trivial tests.** Some of the tests that were written are pretty trivial, added only for coverage. This is sort of a side-effect of basing the project on Express, so this is kind of a "meh". The author argues it would have been nice to avoid things like testing the [routing](./bort-sampson/__tests__/router.specs.js), etc.
 - **No .gitignore file.** Yeah, so Bort checked in all kinds of garbage. `node_modules`, Jest coverage, etc. Bort _should_ know better.
 
 ### Super Subjective Shit
 
 Your author is fairly biased towards more _functional_ JavaScript (E.g. "Functional Programming" or "FP"), so take this all with a big ol' grain of sodium chloride. Most of these are things the author would have given Bort bonus points for, perhaps offsetting ["The Bad"](#the-bad).
 
-Some of those things:
+**THIS IS THE SUPER SUBJECTIVE STUFF**
+
+The author is not sure you heard him, so again:
+
+<span style="font-size:larger;color:red">THIS IS THE SUPER SUBJECTIVE STUFF, THE BONUS CONTENT, THE 100% COMPLETION AWARD, ET CETERA ET CETERA! BELOW THIS LINE ARE THINGS THE AUTHOR LIKES TO SEE, BUT ABSOLUTELY WILL NOT PASS ON A CANDIDATE WHO DOES NOT FOLLOW THEM!</span>
+
+Anyway, dear reader, please bear that in mind! More to the point:
 
 - **Mutating code.** There's a ton of mutation going on. If Bort's been writing `Node.js` as long as they say they have, that's a pretty _bad smell_.
   ![](./docs/images/mutations.png)
